@@ -30,7 +30,7 @@ bucket = RemoteBucket(
 # load local data
 # else fetch remote data and save it
 try:
-    with open('skill_db_relax_20.json') as json_file:
+    with open('/opt/ml/code/skill_db_relax_20.json') as json_file:
         SKILL_DB = json.load(json_file)
 except:
     SKILL_DB = bucket.fetch_remote("SKILL_DB")
@@ -40,7 +40,7 @@ except:
 
 # load token distribution dict
 try:
-    with open('token_dist.json') as json_file:
+    with open('/opt/ml/code/token_dist.json') as json_file:
         TOKEN_DIST = json.load(json_file)
 except:
     TOKEN_DIST = bucket.fetch_remote("TOKEN_DIST")
